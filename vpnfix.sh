@@ -58,6 +58,9 @@ echo 'commenting out this line ---> include "/var/run/racoon/*.conf"'
 echo 'include "/etc/racoon/remote/*.conf" ;' >> /etc/racoon/racoon.conf
 echo 'adding this line --> include "/etc/racoon/remote/*.conf" ;" <-- to end of /etc/racoon/racoon.conf\n'
 
+launchctl stop com.apple.racoon
+launchctl start com.apple.racoon
+
 fi
 
 ################
@@ -70,6 +73,9 @@ echo 'removing lines --> include "/etc/racoon/remote/*.conf" ;" <-- from /etc/ra
 
 sed -i -e 's~#include "/var/run/racoon/\*\.conf"~include "/var/run/racoon/\*\.conf"~' /etc/racoon/racoon.conf
 echo 'Resetting include path to /var/run/racoon/*.conf'
+
+launchctl stop com.apple.racoon
+launchctl start com.apple.racoon
 
 fi
 
@@ -88,6 +94,10 @@ echo 'removing lines --> include "/etc/racoon/remote/*.conf" ;" <-- from /etc/ra
 
 sed -i -e 's~#include "/var/run/racoon/\*\.conf"~include "/var/run/racoon/\*\.conf"~' /etc/racoon/racoon.conf
 echo 'Resetting include path to /var/run/racoon/*.conf'
+
+launchctl stop com.apple.racoon
+launchctl start com.apple.racoon
+
 fi
  
  
@@ -106,7 +116,6 @@ echo 'Changing proposal_check from obey to claim'
  
 launchctl stop com.apple.racoon
 launchctl start com.apple.racoon
- 
  
 fi
  
