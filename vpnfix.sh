@@ -22,7 +22,7 @@ printHelp ()
         echo  "\tunfix\t - Return to Apple original config path."
         echo  "\t\t Enables grabbing new vpn tunnel settings with getcfg.\n"
         echo  "\tunprep\t - reset everything"
-        echo  "\t\t This removes --> include "/etc/racoon/remote/*.conf" from /etc/racoon/racoon.conf, "
+        echo  "\t\t This removes --> include '/etc/racoon/remote/*.conf' from /etc/racoon/racoon.conf, "
         echo  "\t\t resets the original config path and removes all amended configs \n"
         
  
